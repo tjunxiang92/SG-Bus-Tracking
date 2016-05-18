@@ -1,7 +1,7 @@
 import requests
+retries = 3
 
-def code(text):
-	proto = 'https'
+def code(proto, text):
 	d = text
 
 	d = d.strip().split('\n')
@@ -24,9 +24,14 @@ def code(text):
 
 	url = "%s://%s%s" % (proto, data['Host'], url_params)
 
-	if header[0] == 'GET':
-		r = requests.get(url, headers=data)
-	else:
-		r = requests.post(url, headers=data, data=d[-1])
+	for i in range(retries):
+		try:
+			if header[0] == 'GET':
+				r = requests.get(url, headers=data)
+			else:
+				r = requests.post(url, headers=data, data=d[-1])
+			break
+		except:
+			pass
 
 	return r
