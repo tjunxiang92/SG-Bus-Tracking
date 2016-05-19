@@ -9,7 +9,7 @@ The idea behind this project is to achieve the following objectives
  - Tracking of bus
  - Notifying user of end bus stop
  - Mixture with Google Maps to search Start and Destination to route 
- 
+
 ### NTU Bus
  - Tracking of NTU Buses
  - Identify buses that are off the grid and fix them
