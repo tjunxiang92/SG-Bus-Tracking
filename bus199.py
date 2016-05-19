@@ -15,7 +15,7 @@ User-Agent: okhttp/2.2.0
 {"os_type":2,"os_version":23,"ver":"73.0","os":"android","keywords":"199"}
 """
 
-r = code(a)
+r = code('https', a)
 b = r.json()
 b['extras'][0]['tab_name']
 
@@ -42,7 +42,7 @@ for i, bus_stop in enumerate(bus_stops):
 
 	while True:
 		cc = c % (bus_stop['id'])
-		timings = code(cc).json()
+		timings = code('https', cc).json()
 		for timing in timings:
 			if not timing['service_number'] == 199:
 				continue
