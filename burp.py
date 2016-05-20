@@ -1,5 +1,6 @@
 import requests
 retries = 3
+timeout = 10
 
 def code(proto, text):
 	d = text
@@ -27,9 +28,9 @@ def code(proto, text):
 	for i in range(retries):
 		try:
 			if header[0] == 'GET':
-				r = requests.get(url, headers=data)
+				r = requests.get(url, headers=data, timeout=timeout)
 			else:
-				r = requests.post(url, headers=data, data=d[-1])
+				r = requests.post(url, headers=data, data=d[-1], timeout=timeout)
 			break
 		except:
 			pass
