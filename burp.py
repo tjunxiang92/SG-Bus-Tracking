@@ -25,6 +25,7 @@ def code(proto, text):
 
 	url = "%s://%s%s" % (proto, data['Host'], url_params)
 
+	r = None
 	for i in range(retries):
 		try:
 			if header[0] == 'GET':
