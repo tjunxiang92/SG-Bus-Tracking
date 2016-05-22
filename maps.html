@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple markers</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 90%;
+      }
+
+      #slider {
+        height: 10%;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="slider"></div>
+    <script>
+
+      
+      function initMap() {
+        var myLatLng = {lat: 1.34393, lng: 103.684601};  
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: myLatLng
+        });
+
+        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!',
+          icon: image
+        });
+
+        $(function() {
+          $( "#slider" ).slider({
+            slide: function( event, ui ) {
+              myLatLng['lat'] += ui.value / 1000;
+              marker.setPosition(myLatLng);
+              myLatLng['lat'] -= ui.value / 1000;
+            }
+          });
+        });
+      }
+
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB3d1ApqDl_JcNDeFQ-Kk5YZlrigmxhng&callback=initMap">
+    </script>
+  </body>
+</html>

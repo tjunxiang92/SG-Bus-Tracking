@@ -21,6 +21,8 @@ The idea behind this project is to achieve the following objectives
  - Track all SBS buses in operation at a particular time
  - Fix bugs that may occur when 2 buses are consecutively travelling together
  - Creating a webapp to select bus stop and alert you when the bus is nearing the stop
+ - 2 Bus stop ID
+ - Start tracking from 1 till the end
  
 ### NTU Bus
  - Identify Bus Patterns
