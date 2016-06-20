@@ -23,6 +23,8 @@ The idea behind this project is to achieve the following objectives
  - Creating a webapp to select bus stop and alert you when the bus is nearing the stop
  - 2 Bus stop ID
  - Start tracking from 1 till the end
+ - Choose your own route. Preplan your route with the buses you are taking and the app will allocate the respective apps to check the timing and save as a route. e.g. Bishan to Ang Mo Kio
+- Buses and MRT Timings involved
  
 ### NTU Bus
  - Identify Bus Patterns
